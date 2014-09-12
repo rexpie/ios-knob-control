@@ -102,7 +102,7 @@ class DiscreteViewController: BaseViewController {
     func knobPositionChanged(sender: IOSKnobControl) {
         // display both the position and positionIndex properties
         indexLabel.text = String(knobControl.positionIndex)
-        positionLabel.text = "%.02f" % knobControl.position
+        positionLabel.text = "%.02f" 
     }
 
     // MARK: Internal methods
