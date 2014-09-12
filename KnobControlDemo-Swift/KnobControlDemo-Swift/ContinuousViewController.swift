@@ -43,7 +43,9 @@ class ContinuousViewController: BaseViewController{
         
         image = UIImage(named: "cat")
         
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: knobControl.bounds.width, height: knobControl.bounds.height), true, 0)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: knobControl.bounds.width, height: knobControl.bounds.height), false, 0)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
         
         
         image.drawAtPoint(CGPoint(x:knobControl.bounds.origin.x + knobControl.bounds.width/2 - image.size.width/2,y:0))
