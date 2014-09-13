@@ -9,7 +9,7 @@ class ContinuousViewController: BaseViewController{
     
     var image :UIImage!
     
-    let positions :UInt = 20
+    let positions :UInt = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ContinuousViewController: BaseViewController{
         let longerSide = max(originalBounds.height, originalBounds.width)
         let fullBound = CGRect(x : originalBounds.origin.x, y : originalBounds.origin.y, width : longerSide, height : longerSide)
         
-        
+        	
         viewPort.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.5)
         viewPort.tintColor = UIColor.blueColor().colorWithAlphaComponent(0.1)
         // Create the knob control
@@ -54,10 +54,10 @@ class ContinuousViewController: BaseViewController{
         let drawPoint = CGPoint(x:imageX,y:imageY)
         //image.drawAtPoint(drawPoint)
 
-        let angle :Double = 3.14159 * 2 / Double(positions)
+        let angle :Double = M_PI * 2 / Double(positions)
         let offset : Double = (angle / 2.0) - (angle * (Double(positions)/2.0))
         
-        for rotation in 0..<positions{
+        for rotation in 0..<positions-10{
             drawImageWithRotation(context, image:image, rotation:CGFloat(Double(rotation) * angle + offset), point:drawPoint)
         }
         //drawImageWithRotation(context, image:image, rotation:CGFloat(-3.14/2), point:drawPoint)//
@@ -70,6 +70,7 @@ class ContinuousViewController: BaseViewController{
         
         UIGraphicsEndImageContext()
         
+        knobControl.setPosition(Float(offset), animated: false)
         knobControl.setImage(newImage, forState: UIControlState.Normal)
         knobPositionChanged(knobControl)
         
@@ -93,6 +94,7 @@ class ContinuousViewController: BaseViewController{
     func knobPositionChanged(sender: IOSKnobControl) {
         // display both the position and positionIndex properties
         println(sender.positionIndex)
+        println(sender.position)
     }
     
     // MARK: Internal methods
