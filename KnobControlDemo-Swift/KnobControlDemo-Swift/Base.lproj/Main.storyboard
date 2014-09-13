@@ -294,7 +294,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="TopLeft" id="uwl-ig-Cjn">
-                                <rect key="frame" x="0.0" y="313" width="320" height="115"/>
+                                <rect key="frame" x="-88" y="323" width="497" height="239"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>

@@ -9,6 +9,8 @@ class ContinuousViewController: BaseViewController{
     
     var image :UIImage!
     
+    let positions :UInt = 20
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,23 +46,48 @@ class ContinuousViewController: BaseViewController{
         image = UIImage(named: "cat")
         
         UIGraphicsBeginImageContextWithOptions(CGSize(width: knobControl.bounds.width, height: knobControl.bounds.height), false, 0)
-        let context = UIGraphicsGetCurrentContext()
+        var context = UIGraphicsGetCurrentContext()
         CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
         
+        let imageX = knobControl.bounds.width/2
+        let imageY = knobControl.bounds.height/2
+        let drawPoint = CGPoint(x:imageX,y:imageY)
+        //image.drawAtPoint(drawPoint)
+
+        let angle :Double = 3.14159 * 2 / Double(positions)
+        let offset : Double = (angle / 2.0) - (angle * (Double(positions)/2.0))
         
-        image.drawAtPoint(CGPoint(x:knobControl.bounds.origin.x + knobControl.bounds.width/2 - image.size.width/2,y:0))
+        for rotation in 0..<positions{
+            drawImageWithRotation(context, image:image, rotation:CGFloat(Double(rotation) * angle + offset), point:drawPoint)
+        }
+        //drawImageWithRotation(context, image:image, rotation:CGFloat(-3.14/2), point:drawPoint)//
+//        drawImageWithRotation(context, image:image, rotation:CGFloat(offset), point:drawPoint)
+        //drawImageWithRotation(context, image:image, rotation:CGFloat(3.14/2), point:drawPoint)
+        //drawImageWithRotation(context, image:image, rotation:CGFloat(3.14), point:drawPoint)
         
-        
+
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
         
         knobControl.setImage(newImage, forState: UIControlState.Normal)
-        knobControl.positionIndex = 0
         knobPositionChanged(knobControl)
         
         // initialize all other properties based on initial control values
         updateKnobProperties()
+    }
+
+    func drawImageWithRotation (context: CGContext, image: UIImage, rotation: CGFloat, point: CGPoint)
+    {
+        CGContextSaveGState(context)
+        //translate to center
+        CGContextTranslateCTM(context, point.x, point.y)
+        
+        CGContextRotateCTM(context, rotation)
+    
+        
+        image.drawAtPoint(CGPoint(x:-image.size.width/2, y:-point.y))
+        CGContextRestoreGState(context)
     }
     
     func knobPositionChanged(sender: IOSKnobControl) {
@@ -75,7 +102,7 @@ class ContinuousViewController: BaseViewController{
         * slider starts at 0 in middle and ranges from -1 to 1, so the
         * time scale can range from 1/e to e, and defaults to 1.
         */
-        knobControl.timeScale = 1.0
+        knobControl.timeScale = 0.1
         
         // Set the .mode property of the knob control
         
@@ -91,11 +118,9 @@ class ContinuousViewController: BaseViewController{
         knobControl.clockwise = false
         
         // Make use of computed props again to switch between the two demos
-        var titles = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
-        for index in 0...5 {
-            titles.append(" ")
-        }
-            
+        var titles = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"]
+        //, "Sep", "Oct", "Nov", "Dec" ]
+        
         let font = UIFont(name: knobControl.fontName, size: 14.0)
         let italicFontDesc = UIFontDescriptor(name: "Verdana-BoldItalic", size: 14.0)
         let italicFont = UIFont(descriptor: italicFontDesc, size: 0.0)
@@ -110,7 +135,7 @@ class ContinuousViewController: BaseViewController{
         knobControl.titles = attribTitles
         
         
-        knobControl.positions = UInt(titles.count)
+        knobControl.positions = positions
         //knobControl.setImage(nil, forState: .Normal)
         
         
