@@ -21,6 +21,14 @@
 		7BAFFA7F195CDBC200C88446 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAFFA7E195CDBC200C88446 /* ImageViewController.swift */; };
 		7BAFFA81195CDC1900C88446 /* ContinuousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAFFA80195CDC1900C88446 /* ContinuousViewController.swift */; };
 		7BCAA9EA1993124B00B23F4F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCAA9E91993124B00B23F4F /* BaseViewController.swift */; };
+		8713EBCB19C58F460072BF5B /* MyKnobControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBCA19C58F460072BF5B /* MyKnobControl.swift */; };
+		8713EBF219C5DF040072BF5B /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBE919C5DF040072BF5B /* PECropRectView.m */; };
+		8713EBF319C5DF040072BF5B /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBEB19C5DF040072BF5B /* PECropView.m */; };
+		8713EBF419C5DF040072BF5B /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBED19C5DF040072BF5B /* PECropViewController.m */; };
+		8713EBF519C5DF040072BF5B /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBEF19C5DF040072BF5B /* PEResizeControl.m */; };
+		8713EBF619C5DF040072BF5B /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBF119C5DF040072BF5B /* UIImage+PECrop.m */; };
+		8713EBF919C5E4720072BF5B /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8713EBF819C5E4720072BF5B /* PEPhotoCropEditor.bundle */; };
+		8713EBFC19C5E55D0072BF5B /* MyCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBFB19C5E55D0072BF5B /* MyCropViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +77,20 @@
 		7BAFFA7E195CDBC200C88446 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		7BAFFA80195CDC1900C88446 /* ContinuousViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousViewController.swift; sourceTree = "<group>"; };
 		7BCAA9E91993124B00B23F4F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8713EBCA19C58F460072BF5B /* MyKnobControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyKnobControl.swift; sourceTree = "<group>"; };
+		8713EBE819C5DF040072BF5B /* PECropRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropRectView.h; sourceTree = "<group>"; };
+		8713EBE919C5DF040072BF5B /* PECropRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropRectView.m; sourceTree = "<group>"; };
+		8713EBEA19C5DF040072BF5B /* PECropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropView.h; sourceTree = "<group>"; };
+		8713EBEB19C5DF040072BF5B /* PECropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropView.m; sourceTree = "<group>"; };
+		8713EBEC19C5DF040072BF5B /* PECropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropViewController.h; sourceTree = "<group>"; };
+		8713EBED19C5DF040072BF5B /* PECropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropViewController.m; sourceTree = "<group>"; };
+		8713EBEE19C5DF040072BF5B /* PEResizeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEResizeControl.h; sourceTree = "<group>"; };
+		8713EBEF19C5DF040072BF5B /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
+		8713EBF019C5DF040072BF5B /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
+		8713EBF119C5DF040072BF5B /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
+		8713EBF819C5E4720072BF5B /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
+		8713EBFA19C5E55D0072BF5B /* MyCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCropViewController.h; path = "KnobControlDemo-Swift/MyCropViewController.h"; sourceTree = "<group>"; };
+		8713EBFB19C5E55D0072BF5B /* MyCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCropViewController.m; path = "KnobControlDemo-Swift/MyCropViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +120,7 @@
 				7B25BD9E195B98E80060A1BA /* KnobControlDemo-Swift */,
 				7B25BDB3195B98E80060A1BA /* KnobControlDemo-SwiftTests */,
 				7B25BDC3195B9DED0060A1BA /* IOSKnobControl */,
+				8713EBF719C5DF320072BF5B /* CropView */,
 				7B5268761965E37A00732EA4 /* Frameworks */,
 				7B25BD9D195B98E80060A1BA /* Products */,
 			);
@@ -162,6 +185,7 @@
 		7B5268711965CFCD00732EA4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8713EBF819C5E4720072BF5B /* PEPhotoCropEditor.bundle */,
 				7BCAA9E91993124B00B23F4F /* BaseViewController.swift */,
 				7BAFFA80195CDC1900C88446 /* ContinuousViewController.swift */,
 				7B204B15195D016A00873E27 /* DiscreteViewController.swift */,
@@ -169,6 +193,7 @@
 				7BAFFA7E195CDBC200C88446 /* ImageViewController.swift */,
 				7B25BDA5195B98E80060A1BA /* RotaryDialViewController.swift */,
 				7B5268721965DABF00732EA4 /* SpinViewController.swift */,
+				8713EBCA19C58F460072BF5B /* MyKnobControl.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -179,6 +204,25 @@
 				7B5268771965E8C300732EA4 /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8713EBF719C5DF320072BF5B /* CropView */ = {
+			isa = PBXGroup;
+			children = (
+				8713EBFA19C5E55D0072BF5B /* MyCropViewController.h */,
+				8713EBFB19C5E55D0072BF5B /* MyCropViewController.m */,
+				8713EBE819C5DF040072BF5B /* PECropRectView.h */,
+				8713EBE919C5DF040072BF5B /* PECropRectView.m */,
+				8713EBEA19C5DF040072BF5B /* PECropView.h */,
+				8713EBEB19C5DF040072BF5B /* PECropView.m */,
+				8713EBEC19C5DF040072BF5B /* PECropViewController.h */,
+				8713EBED19C5DF040072BF5B /* PECropViewController.m */,
+				8713EBEE19C5DF040072BF5B /* PEResizeControl.h */,
+				8713EBEF19C5DF040072BF5B /* PEResizeControl.m */,
+				8713EBF019C5DF040072BF5B /* UIImage+PECrop.h */,
+				8713EBF119C5DF040072BF5B /* UIImage+PECrop.m */,
+			);
+			name = CropView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +276,7 @@
 				TargetAttributes = {
 					7B25BD9B195B98E80060A1BA = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 3CGLC4HEB4;
 					};
 					7B25BDAF195B98E80060A1BA = {
 						CreatedOnToolsVersion = 6.0;
@@ -265,6 +310,7 @@
 			files = (
 				7B25BDA9195B98E80060A1BA /* Main.storyboard in Resources */,
 				7B3F7C14195D109000771BD8 /* ChangeLog in Resources */,
+				8713EBF919C5E4720072BF5B /* PEPhotoCropEditor.bundle in Resources */,
 				7B25BDAB195B98E80060A1BA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,11 +333,18 @@
 				7BAFFA81195CDC1900C88446 /* ContinuousViewController.swift in Sources */,
 				7B25BDC2195B9DE40060A1BA /* IOSKnobControl.m in Sources */,
 				7BAFFA7F195CDBC200C88446 /* ImageViewController.swift in Sources */,
+				8713EBF219C5DF040072BF5B /* PECropRectView.m in Sources */,
 				7B204B16195D016A00873E27 /* DiscreteViewController.swift in Sources */,
+				8713EBF519C5DF040072BF5B /* PEResizeControl.m in Sources */,
+				8713EBCB19C58F460072BF5B /* MyKnobControl.swift in Sources */,
 				7BCAA9EA1993124B00B23F4F /* BaseViewController.swift in Sources */,
+				8713EBF419C5DF040072BF5B /* PECropViewController.m in Sources */,
+				8713EBFC19C5E55D0072BF5B /* MyCropViewController.m in Sources */,
+				8713EBF619C5DF040072BF5B /* UIImage+PECrop.m in Sources */,
 				7B5268731965DABF00732EA4 /* SpinViewController.swift in Sources */,
 				7B25BDA2195B98E80060A1BA /* AppDelegate.swift in Sources */,
 				7B25BDA4195B98E80060A1BA /* FeedbackViewController.swift in Sources */,
+				8713EBF319C5DF040072BF5B /* PECropView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,9 +472,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "KnobControlDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KnobControlDemo-Swift/KnobControlDemo-Swift-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,9 +488,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "KnobControlDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KnobControlDemo-Swift/KnobControlDemo-Swift-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
