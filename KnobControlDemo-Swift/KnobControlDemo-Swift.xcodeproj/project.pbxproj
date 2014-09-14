@@ -28,7 +28,6 @@
 		8713EBF519C5DF040072BF5B /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBEF19C5DF040072BF5B /* PEResizeControl.m */; };
 		8713EBF619C5DF040072BF5B /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBF119C5DF040072BF5B /* UIImage+PECrop.m */; };
 		8713EBF919C5E4720072BF5B /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8713EBF819C5E4720072BF5B /* PEPhotoCropEditor.bundle */; };
-		8713EBFC19C5E55D0072BF5B /* MyCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBFB19C5E55D0072BF5B /* MyCropViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +88,6 @@
 		8713EBF019C5DF040072BF5B /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
 		8713EBF119C5DF040072BF5B /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
 		8713EBF819C5E4720072BF5B /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
-		8713EBFA19C5E55D0072BF5B /* MyCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCropViewController.h; path = "KnobControlDemo-Swift/MyCropViewController.h"; sourceTree = "<group>"; };
-		8713EBFB19C5E55D0072BF5B /* MyCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCropViewController.m; path = "KnobControlDemo-Swift/MyCropViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +206,6 @@
 		8713EBF719C5DF320072BF5B /* CropView */ = {
 			isa = PBXGroup;
 			children = (
-				8713EBFA19C5E55D0072BF5B /* MyCropViewController.h */,
-				8713EBFB19C5E55D0072BF5B /* MyCropViewController.m */,
 				8713EBE819C5DF040072BF5B /* PECropRectView.h */,
 				8713EBE919C5DF040072BF5B /* PECropRectView.m */,
 				8713EBEA19C5DF040072BF5B /* PECropView.h */,
@@ -339,7 +334,6 @@
 				8713EBCB19C58F460072BF5B /* MyKnobControl.swift in Sources */,
 				7BCAA9EA1993124B00B23F4F /* BaseViewController.swift in Sources */,
 				8713EBF419C5DF040072BF5B /* PECropViewController.m in Sources */,
-				8713EBFC19C5E55D0072BF5B /* MyCropViewController.m in Sources */,
 				8713EBF619C5DF040072BF5B /* UIImage+PECrop.m in Sources */,
 				7B5268731965DABF00732EA4 /* SpinViewController.swift in Sources */,
 				7B25BDA2195B98E80060A1BA /* AppDelegate.swift in Sources */,
