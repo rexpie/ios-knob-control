@@ -38,7 +38,10 @@ class SpinViewController: PECropViewController, PECropViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        self.image = UIImage(named:"cat")
+        let url:NSURL = NSURL(string:"https://bbs.sjtu.edu.cn/file/PPPerson/1408961800274470.jpg")
+        var err: NSError?
+        let data : NSData = NSData.dataWithContentsOfURL(url, options:NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
+        self.image = UIImage(data:data)
         
     }
     
