@@ -4,3 +4,7 @@ xcuserdata
 docset-installed.txt
 *.swp
 *.bak
+
+KnobControlDemo-Swift/KnobControlDemo-Swift.xcodeproj/project.pbxproj
+
+*.pbxproj
