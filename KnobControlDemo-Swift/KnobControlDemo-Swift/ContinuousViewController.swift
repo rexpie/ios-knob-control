@@ -14,6 +14,9 @@ class ContinuousViewController: BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let radius :Int = 800
+        knobControl = getKnobControl(viewPort, radius)
+        
         //======================================================
         // image creation
         image = UIImage(named: "cat")
@@ -40,9 +43,6 @@ class ContinuousViewController: BaseViewController{
         //=====================================================================
         //End image creation
         
-        
-        let radius :Int = 800
-        knobControl = getKnobControl(viewPort, radius)
         knobControl.setPosition(Float(offset), animated: false)
         knobControl.setImage(newImage, forState: UIControlState.Normal)
         knobControl.addTarget(self, action: "knobPositionChanged:", forControlEvents: UIControlEvents.ValueChanged)
