@@ -21,6 +21,7 @@
 		7BAFFA7F195CDBC200C88446 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAFFA7E195CDBC200C88446 /* ImageViewController.swift */; };
 		7BAFFA81195CDC1900C88446 /* ContinuousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAFFA80195CDC1900C88446 /* ContinuousViewController.swift */; };
 		7BCAA9EA1993124B00B23F4F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCAA9E91993124B00B23F4F /* BaseViewController.swift */; };
+		8713EBCB19C58F460072BF5B /* MyKnobControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBCA19C58F460072BF5B /* MyKnobControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		7BAFFA7E195CDBC200C88446 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		7BAFFA80195CDC1900C88446 /* ContinuousViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousViewController.swift; sourceTree = "<group>"; };
 		7BCAA9E91993124B00B23F4F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8713EBCA19C58F460072BF5B /* MyKnobControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyKnobControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				7BAFFA7E195CDBC200C88446 /* ImageViewController.swift */,
 				7B25BDA5195B98E80060A1BA /* RotaryDialViewController.swift */,
 				7B5268721965DABF00732EA4 /* SpinViewController.swift */,
+				8713EBCA19C58F460072BF5B /* MyKnobControl.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				TargetAttributes = {
 					7B25BD9B195B98E80060A1BA = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 3CGLC4HEB4;
 					};
 					7B25BDAF195B98E80060A1BA = {
 						CreatedOnToolsVersion = 6.0;
@@ -288,6 +292,7 @@
 				7B25BDC2195B9DE40060A1BA /* IOSKnobControl.m in Sources */,
 				7BAFFA7F195CDBC200C88446 /* ImageViewController.swift in Sources */,
 				7B204B16195D016A00873E27 /* DiscreteViewController.swift in Sources */,
+				8713EBCB19C58F460072BF5B /* MyKnobControl.swift in Sources */,
 				7BCAA9EA1993124B00B23F4F /* BaseViewController.swift in Sources */,
 				7B5268731965DABF00732EA4 /* SpinViewController.swift in Sources */,
 				7B25BDA2195B98E80060A1BA /* AppDelegate.swift in Sources */,
@@ -419,9 +424,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "KnobControlDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KnobControlDemo-Swift/KnobControlDemo-Swift-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,9 +440,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "KnobControlDemo-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KnobControlDemo-Swift/KnobControlDemo-Swift-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
