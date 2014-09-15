@@ -1309,7 +1309,7 @@ static CGRect adjustFrame(CGRect frame, CGFloat fingerHoleRadius) {
     CGPoint centerFrameBegin = [self transformLocationToCenterFrame:[sender locationInView:self]];
     CGPoint centerFrameTranslation = [self transformTranslationToCenterFrame:[sender translationInView:self]];
     CGPoint centerFrameEnd = centerFrameBegin;
-    centerFrameEnd.x += centerFrameTranslation.x;
+    centerFrameEnd.x += centerFrameTranslation.x / 10;
     centerFrameEnd.y += centerFrameTranslation.y;
     float touch = [self polarAngleOfPoint:centerFrameEnd];
 
