@@ -42,6 +42,8 @@ class SpinViewController: PECropViewController, PECropViewControllerDelegate {
         var err: NSError?
         let data : NSData = NSData.dataWithContentsOfURL(url, options:NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
         self.image = UIImage(data:data)
+        self.cropAspectRatio = CGFloat(0.8)
+        self.keepingCropAspectRatio = true
         
     }
     

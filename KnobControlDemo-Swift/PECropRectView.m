@@ -324,11 +324,11 @@
 {
     CGFloat width = CGRectGetWidth(rect);
     CGFloat height = CGRectGetHeight(rect);
-    if (width < height) {
+//    if (width < height) {
         height = width / self.fixedAspectRatio;
-    } else {
-        height = width * self.fixedAspectRatio;
-    }
+//    } else {
+//        height = width * self.fixedAspectRatio;
+//    }
     rect.size = CGSizeMake(width, height);
     
     return rect;
@@ -338,11 +338,11 @@
 {
     CGFloat width = CGRectGetWidth(rect);
     CGFloat height = CGRectGetHeight(rect);
-    if (width < height) {
+//    if (width < height) {
         width = height * self.fixedAspectRatio;
-    } else {
-        width = height / self.fixedAspectRatio;
-    }
+//    } else {
+//        width = height / self.fixedAspectRatio;
+//    }
     rect.size = CGSizeMake(width, height);
     
     return rect;
