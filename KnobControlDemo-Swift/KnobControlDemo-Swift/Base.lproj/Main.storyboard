@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -289,24 +288,39 @@
         <scene sceneID="mqf-3p-rJs">
             <objects>
                 <viewController title="Continuous" id="Hpa-pY-eTL" customClass="ContinuousViewController" customModule="KnobControlDemo_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cAA-wj-LO5">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="cAA-wj-LO5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="TopLeft" id="uwl-ig-Cjn">
                                 <rect key="frame" x="0.0" y="310" width="320" height="239"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view opaque="NO" contentMode="center" id="31F-yS-b5v">
+                                <rect key="frame" x="0.0" y="20" width="320" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tw4-Gy-dzR" appends="YES" id="T1b-A1-ZNN"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Continuous" id="WWA-Eq-HZP"/>
                     <connections>
+                        <outlet property="stackView" destination="31F-yS-b5v" id="egO-Wh-SwC"/>
                         <outlet property="viewPort" destination="uwl-ig-Cjn" id="xoH-OQ-BAK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmK-5V-cfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tw4-Gy-dzR">
+                    <connections>
+                        <action selector="handlePan:" destination="Hpa-pY-eTL" id="SDJ-7s-UVb"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1525" y="177"/>
         </scene>

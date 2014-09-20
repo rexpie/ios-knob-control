@@ -7,24 +7,161 @@ class ContinuousViewController: BaseViewController{
     
     @IBOutlet weak var viewPort: UIView!
     
+    @IBOutlet weak var stackView: UIView!
+    
     var image :UIImage!
     
     let positions :UInt = 30
     var lastPositionIndex :Int = 0
+    
+    var images: [UIImage]! = []
+    var imageViews : [UIImageView]! = []
+    
+    @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
+        //println("pan")
+        let translation = recognizer.translationInView(stackView)
+        
+        if ( recognizer.state == UIGestureRecognizerState.Changed){
+            //println("change")
+        }
+        if ( recognizer.state == UIGestureRecognizerState.Ended){
+            //println("end")
+            let x = translation.x
+            
+            if (abs(x) > 50)
+            {
+                let direction = abs(x) / x
+                println("direction", direction)
+                let nextIndex:Int = knobControl.positionIndex - Int(direction)
+                
+                println("move")
+                animateStack(nextIndex, direction:direction)
+            }
+        }
+    }
+    
+    func animateStack(nextIndex:Int, direction:CGFloat)
+    {
+        println("positionIndex", String(knobControl.positionIndex))
+        println("last pos%d", String(lastPositionIndex))
+        
+        println("nextIndex", nextIndex)
+        let translationX = direction * 100
+        
+        if (nextIndex < 0)
+        {
+            // refresh
+            return
+        }
+        
+        if (lastPositionIndex == images.count - 1 && direction < 0)
+        {
+            // load more
+            return
+        }
+        
+        
+        var theView: UIImageView = imageViews[lastPositionIndex]
+        
+        var thePrevView: UIImageView = imageViews[nextIndex]
+        
+        
+        let indexForTopImage: Int = lastPositionIndex
+        let indexForBottonImage: Int = nextIndex
+        
+        for view in imageViews
+        {
+            view.layer.zPosition = 0
+        }
+        
+        if (direction < 0)
+        {
+            
+            let topImageView = imageViews[indexForTopImage]
+            topImageView.layer.zPosition = 2
+            topImageView.transform = CGAffineTransformIdentity
+            
+            let bottomImageView = imageViews[indexForBottonImage]
+            bottomImageView.layer.zPosition = 1
+            bottomImageView.transform = CGAffineTransformIdentity
+        }
+        else
+        {
+            
+            let topImageView = imageViews[indexForBottonImage]
+            topImageView.layer.zPosition = 2
+            topImageView.alpha = 0.0
+            topImageView.transform = CGAffineTransformMakeTranslation(-translationX, 0)
+            
+            let bottomImageView = imageViews[indexForTopImage]
+            bottomImageView.layer.zPosition = 1
+        }
+        
+        if (direction < 0)
+        {
+            UIView.animateWithDuration(0.5,
+                delay: 0,
+                options: UIViewAnimationOptions.CurveEaseInOut ,
+                animations: {
+                    theView.alpha = 0;
+                    theView.transform = CGAffineTransformMakeTranslation(translationX, 0)
+                }, completion: {(value:Bool) in
+                    theView.layer.zPosition = 0
+                    theView.alpha = 1.0
+                    theView.transform = CGAffineTransformIdentity
+                }
+            )
+        }
+        else
+        {
+            UIView.animateWithDuration(0.5,
+                delay: 0,
+                options: UIViewAnimationOptions.CurveEaseInOut ,
+                animations: {
+                    thePrevView.alpha = 1.0;
+                    thePrevView.transform = CGAffineTransformIdentity
+                }, completion: {(value:Bool) in
+                    theView.layer.zPosition = 0
+                    theView.alpha = 1.0
+                    theView.transform = CGAffineTransformIdentity
+                }
+                
+            )
+            
+        }
+        knobControl.positionIndex = nextIndex
+        lastPositionIndex = nextIndex
+        
+    }
+    
+    func handleTap(recognizer:UITapGestureRecognizer) {
+        println("tap")
+        let point = recognizer.locationOfTouch( 0, inView: stackView)
+        println(point.x)
+        println(point.y)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // load images
+        // TODO async
+        images.append(UIImage(named: "item1"))
+        images.append(UIImage(named: "item2"))
+        images.append(UIImage(named: "item3"))
+        images.append(UIImage(named: "item4"))
         
         let radius :Int = 800
         knobControl = getKnobControl(viewPort, radius)
         
         //======================================================
         // image creation
-        image = UIImage(named: "cat")
+        
         
                 //=====================================================================
         //End image creation
-        for i in 0..<positions - 10{
-            setImageAtIndex(knobControl, index: i, image: image)
+        for i in 0..<images.count{
+            setImageAtIndex(knobControl, index: UInt(i), image: images[i])
         }
         
         knobControl.addTarget(self, action: "knobPositionChanged:", forControlEvents: UIControlEvents.ValueChanged)
@@ -34,6 +171,34 @@ class ContinuousViewController: BaseViewController{
         
         // initialize all other properties based on initial control values
         updateKnobProperties()
+        
+        //--------------------------------------------------
+        //knob view finished
+        
+        //stack view starts
+
+        
+        
+        setupStack(stackView, images: images)
+        
+    }
+    
+    
+    func setupStack(stackView: UIView, images: [UIImage])
+    {
+        var zPositionIndex: CGFloat = 2
+        for image in images{
+            let imageView = UIImageView(image: image)
+            imageViews.append(imageView)
+            imageView.layer.zPosition = zPositionIndex
+            zPositionIndex = zPositionIndex - 1
+            imageView.center = stackView.center
+            stackView.addSubview(imageView)
+        }
+        
+        
+        let gesture = UITapGestureRecognizer(target: self, action: "handleTap:")
+        stackView.addGestureRecognizer(gesture)
     }
 
     func setImageAtIndex(knobControl: IOSKnobControl, index: UInt, image: UIImage)
@@ -96,12 +261,18 @@ class ContinuousViewController: BaseViewController{
     {
         // display both the position and positionIndex properties
         let index = sender.positionIndex
+        
+        if ( lastPositionIndex != index){
+            animateStack(sender.positionIndex, direction: CGFloat(lastPositionIndex - index))
+        }
+        
         if index != lastPositionIndex
         {
             println(sender.positionIndex)
             println(sender.position)
             lastPositionIndex = index
         }
+        
     }
     
     func resetKnobControl(knobControl:IOSKnobControl, positions: UInt)
@@ -127,4 +298,5 @@ class ContinuousViewController: BaseViewController{
         knobControl.position = knobControl.position
     }
     
+       
 }

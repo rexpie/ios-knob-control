@@ -28,6 +28,7 @@
 		8713EBF519C5DF040072BF5B /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBEF19C5DF040072BF5B /* PEResizeControl.m */; };
 		8713EBF619C5DF040072BF5B /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8713EBF119C5DF040072BF5B /* UIImage+PECrop.m */; };
 		8713EBF919C5E4720072BF5B /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8713EBF819C5E4720072BF5B /* PEPhotoCropEditor.bundle */; };
+		87AC1F8919CC5F0600A4505B /* PhotoStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87AC1F8819CC5F0600A4505B /* PhotoStackView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		8713EBF019C5DF040072BF5B /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
 		8713EBF119C5DF040072BF5B /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
 		8713EBF819C5E4720072BF5B /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
+		87AC1F8719CC5F0600A4505B /* PhotoStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStackView.h; sourceTree = "<group>"; };
+		87AC1F8819CC5F0600A4505B /* PhotoStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStackView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		7B25BD93195B98E80060A1BA = {
 			isa = PBXGroup;
 			children = (
+				87AC1F8619CC5EDC00A4505B /* stack */,
 				7B3F7C12195D109000771BD8 /* ChangeLog */,
 				7B3F7C13195D109000771BD8 /* README.md */,
 				7B25BD9E195B98E80060A1BA /* KnobControlDemo-Swift */,
@@ -218,6 +222,15 @@
 				8713EBF119C5DF040072BF5B /* UIImage+PECrop.m */,
 			);
 			name = CropView;
+			sourceTree = "<group>";
+		};
+		87AC1F8619CC5EDC00A4505B /* stack */ = {
+			isa = PBXGroup;
+			children = (
+				87AC1F8719CC5F0600A4505B /* PhotoStackView.h */,
+				87AC1F8819CC5F0600A4505B /* PhotoStackView.m */,
+			);
+			name = stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +343,7 @@
 				7BAFFA7F195CDBC200C88446 /* ImageViewController.swift in Sources */,
 				8713EBF219C5DF040072BF5B /* PECropRectView.m in Sources */,
 				7B204B16195D016A00873E27 /* DiscreteViewController.swift in Sources */,
+				87AC1F8919CC5F0600A4505B /* PhotoStackView.m in Sources */,
 				8713EBF519C5DF040072BF5B /* PEResizeControl.m in Sources */,
 				8713EBCB19C58F460072BF5B /* MyKnobControl.swift in Sources */,
 				7BCAA9EA1993124B00B23F4F /* BaseViewController.swift in Sources */,
